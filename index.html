@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qastar — Social media, finally intimate</title>
   <link rel="icon" type="image/png" href="icon-transparent.png" />
-  <meta name="description" content="Social media promised connection. It delivered performance. Qastar is what it was always supposed to be." />
+  <meta name="description" content="Capture your life. Share it with the few who matter. Qastar is social media, finally intimate." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -15,6 +15,24 @@
       --cream: #FDF8F2; --cream-dark: #F5EDE0; --cream-border: #E8DDD0;
       --purple: #7B6BA8; --amber: #C4956A;
       --text-dark: #3D2010; --text-mid: #6B4A2A; --text-muted: #B09070; --text-faint: #D4C4B0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream: #1A1410;
+        --cream-dark: #241E18;
+        --cream-border: #3D3020;
+        --purple: #9B8EC4;
+        --amber: #C4956A;
+        --text-dark: #F0E8DC;
+        --text-mid: #C8B090;
+        --text-muted: #8B7060;
+        --text-faint: #5A4535;
+      }
+      .btn-store.apple { background: #F0E8DC; color: #1A1410; }
+      .btn-store.android { background: #241E18; color: #F0E8DC; border-color: #3D3020; }
+      .orb { box-shadow: 0 0 40px rgba(196,149,106,0.25), 0 0 80px rgba(155,142,196,0.15); }
+      .footer-links a:hover { color: var(--text-dark); }
     }
     html { scroll-behavior: smooth; }
     body { background: var(--cream); color: var(--text-dark); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
@@ -142,15 +160,13 @@
     </div>
 
     <h1 class="hero-headline">
-      Social media promised connection.<br>It delivered performance.
+      Write for yourself.<br>Or share with the ones you love.
     </h1>
 
-    <p class="hero-subheadline">Social Media</p>
+    <p class="hero-subheadline">Social media, finally intimate.</p>
 
     <p class="hero-sub">
-      A small circle. Real moments. No audience watching your every move.
-      No algorithm. No short videos. No strangers.
-      Just the few people who actually matter.
+      Every day holds something worth keeping. Write it down for yourself, or share it with the people who matter when you feel like it. No audience. No algorithm. Just you and your people.
     </p>
 
     <div class="download-row">
@@ -164,7 +180,7 @@
       </a>
     </div>
 
-    <p class="hero-note">Social media for people who hate social media.</p>
+    <p class="hero-note">Your journal. Their window into your world.</p>
   </div>
 
   <!-- ORNAMENT -->
@@ -174,22 +190,22 @@
   <div class="contrast fade-in">
     <div class="contrast-grid">
       <div class="contrast-col then">
-        <p class="contrast-label">What you left behind</p>
-        <div class="contrast-item">Hundreds of people watching your every post</div>
-        <div class="contrast-item">Feeds filled with strangers and ads</div>
-        <div class="contrast-item">Short videos engineered to keep you scrolling</div>
+        <p class="contrast-label">Every other app</p>
+        <div class="contrast-item">Posting for hundreds of strangers</div>
+        <div class="contrast-item">Feeds engineered to keep you scrolling</div>
         <div class="contrast-item">An algorithm deciding what you see</div>
         <div class="contrast-item">Performing for likes you don't care about</div>
-        <div class="contrast-item">Feeling more alone the longer you scroll</div>
+        <div class="contrast-item">Moments lost. No archive. No memory.</div>
+        <div class="contrast-item">Closing the app feeling more alone</div>
       </div>
       <div class="contrast-col now">
-        <p class="contrast-label now-label">What you came back for</p>
-        <div class="contrast-item active">A few people who actually know you</div>
-        <div class="contrast-item active">Moments shared. Not content posted.</div>
-        <div class="contrast-item active">No short videos. No infinite scroll.</div>
-        <div class="contrast-item active">Chronological. Simple. Yours.</div>
-        <div class="contrast-item active">Writing for yourself. Not an audience.</div>
-        <div class="contrast-item active">Closing the app feeling connected.</div>
+        <p class="contrast-label now-label">Qastar</p>
+        <div class="contrast-item active">Sharing with a circle who actually know you</div>
+        <div class="contrast-item active">Capturing moments before they disappear</div>
+        <div class="contrast-item active">Chronological. Simple. No algorithm.</div>
+        <div class="contrast-item active">Writing for yourself, or sharing when it feels right</div>
+        <div class="contrast-item active">An archive that grows with your life</div>
+        <div class="contrast-item active">Closing the app feeling present</div>
       </div>
     </div>
   </div>
@@ -197,14 +213,14 @@
   <!-- STATEMENT -->
   <div class="statement fade-in">
     <p class="statement-text">
-      You don't need hundreds of followers.<br>
-      You need a few people who actually know you.<br>
-      Qastar is built for those few.
+      Not everything you feel needs an audience.<br>
+      But some things deserve to be remembered.<br>
+      And some people deserve to know.
     </p>
     <p class="statement-sub">
-      The people who matter most to you shared something today.<br>
-      Not to their thousands of followers.<br>
-      Just to you.
+      Qastar is where you write for yourself first.<br>
+      Where sharing is a choice, not a reflex.<br>
+      Where the people who love you actually see your life.
     </p>
   </div>
 
@@ -218,29 +234,29 @@
         <div class="how-step">
           <div class="how-num">1</div>
           <div>
-            <div class="how-text">Capture a moment each day</div>
-            <div class="how-sub">A photo, a thought, or both. No pressure. Takes two minutes.</div>
+            <div class="how-text">Write it down, just for you</div>
+            <div class="how-sub">A thought, a photo, a feeling. Your private journal. Nobody sees it unless you want them to.</div>
           </div>
         </div>
         <div class="how-step">
           <div class="how-num">2</div>
           <div>
-            <div class="how-text">Choose who sees it</div>
-            <div class="how-sub">Your circle. A specific person. Just yourself. You decide every time.</div>
+            <div class="how-text">Share when it feels right</div>
+            <div class="how-sub">Keep it private, or open it to your whole circle. You decide every single time.</div>
           </div>
         </div>
         <div class="how-step">
           <div class="how-num">3</div>
           <div>
-            <div class="how-text">See what your circle shared</div>
-            <div class="how-sub">Not a feed. Not a scroll. A small, intentional list of people you chose. Nothing more.</div>
+            <div class="how-text">See what your people are living</div>
+            <div class="how-sub">Not a feed. Not strangers. Just the few people you love, sharing their real life with you.</div>
           </div>
         </div>
         <div class="how-step">
           <div class="how-num">4</div>
           <div>
-            <div class="how-text">Your archive grows quietly</div>
-            <div class="how-sub">A year from now, Qastar will show you what you wrote today. Ten years from now, it will still be there.</div>
+            <div class="how-text">Your archive grows. Patterns emerge</div>
+            <div class="how-sub">A year from now, Qastar shows you what you wrote today. You start to see who you are becoming. That is the part no other app thought to build.</div>
           </div>
         </div>
       </div>
@@ -250,14 +266,13 @@
   <!-- QUOTE -->
   <div class="quote-section fade-in">
     <p class="big-quote">
-      "Qastar is for the people who want<br>
-      to connect. Not perform."
+      "Most apps want you to post.<br>
+      Qastar just wants you to live."
     </p>
     <p class="quote-sub">
-      No ads filling the space between people.<br>
-      No algorithm deciding who matters to you.<br>
-      No strangers in your circle.<br>
-      Just social media that finally feels social.
+      Write because you want to remember. Share because you want to connect.<br>
+      No pressure. No strangers. No algorithm deciding what matters.<br>
+      Just you, your journal, and the people you actually love.
     </p>
   </div>
 
@@ -266,8 +281,8 @@
   <!-- CTA BOTTOM -->
   <div class="cta-bottom fade-in">
     <div class="cta-orb-small"></div>
-    <h2 class="cta-headline">Come back to social media.<br>The version that was always meant to exist.</h2>
-    <p class="cta-sub">One moment. A few people. That's all it takes.</p>
+    <h2 class="cta-headline">Your life is worth writing down.<br>The people you love want to read it.</h2>
+    <p class="cta-sub">Start with one moment. Share it when you feel like it. That is all this is.</p>
     <div class="download-row">
       <a href="#" class="btn-store apple">
         <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
