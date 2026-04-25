@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qastar — Private journal, your circle</title>
+  <meta name="description" content="Capture one moment each day. Share it with who matters. No algorithm. No strangers. No performance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FDF8F2; --cream-dark: #F5EDE0; --cream-border: #E8DDD0;
+      --purple: #7B6BA8; --amber: #C4956A;
+      --text-dark: #3D2010; --text-mid: #6B4A2A; --text-muted: #B09070; --text-faint: #D4C4B0;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--text-dark); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.4; }
+
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 24px 60px; text-align: center; position: relative; }
+    .hero::after { content: ''; position: absolute; top: 35%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(ellipse at center, rgba(196,149,106,0.12) 0%, rgba(123,107,168,0.08) 50%, transparent 70%); pointer-events: none; }
+
+    .orb-wrap { position: relative; width: 120px; height: 120px; margin: 0 auto 48px; }
+    .orb { width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle at 38% 38%, #E8C99A 0%, #C4956A 35%, #9B7BC0 70%, #7B6BA8 100%); box-shadow: 0 0 40px rgba(196,149,106,0.35), 0 0 80px rgba(123,107,168,0.20); animation: breathe 4s ease-in-out infinite; position: relative; z-index: 2; }
+    .orb-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(123,107,168,0.2); top: 50%; left: 50%; transform: translate(-50%,-50%); animation: ringPulse 4s ease-in-out infinite; }
+    .orb-ring:nth-child(1) { width: 150px; height: 150px; animation-delay: 0.5s; }
+    .orb-ring:nth-child(2) { width: 185px; height: 185px; animation-delay: 1s; border-color: rgba(196,149,106,0.12); }
+    .sparkle { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #E8C99A; animation: sparkleFloat 3s ease-in-out infinite; }
+    .sparkle:nth-child(3) { top: -8px; left: 50%; }
+    .sparkle:nth-child(4) { top: 20%; right: -10px; animation-delay: 0.6s; width: 3px; height: 3px; }
+    .sparkle:nth-child(5) { bottom: 10%; left: -8px; animation-delay: 1.2s; width: 3px; height: 3px; }
+    .sparkle:nth-child(6) { bottom: -6px; right: 25%; animation-delay: 1.8s; }
+
+    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+    @keyframes ringPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+    @keyframes sparkleFloat { 0%,100% { opacity: 0; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-4px); } }
+
+    .hero-logo { font-weight: 300; font-size: 13px; letter-spacing: 6px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 32px; }
+    .hero-headline { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(36px,6vw,64px); color: var(--text-dark); line-height: 1.25; max-width: 700px; margin: 0 auto 24px; }
+    .hero-sub { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(16px,2.5vw,20px); color: var(--text-muted); line-height: 1.7; max-width: 480px; margin: 0 auto 48px; }
+
+    .download-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .btn-store { display: flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 14px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .btn-store:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+    .btn-store.apple { background: var(--text-dark); color: var(--cream); }
+    .btn-store.android { background: var(--cream); color: var(--text-dark); border: 1px solid var(--cream-border); box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .btn-store-text { display: flex; flex-direction: column; align-items: flex-start; }
+    .btn-store-label { font-size: 10px; font-weight: 400; letter-spacing: 0.5px; opacity: 0.7; line-height: 1; margin-bottom: 2px; }
+    .btn-store-name { font-size: 15px; font-weight: 500; line-height: 1; }
+    .hero-note { font-family: 'EB Garamond', serif; font-style: italic; font-size: 14px; color: var(--text-faint); }
+
+    .ornament { text-align: center; color: var(--cream-border); font-size: 18px; letter-spacing: 16px; }
+
+    .manifesto { text-align: center; padding: 80px 24px; max-width: 600px; margin: 0 auto; }
+    .manifesto-lines { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(20px,3.5vw,28px); color: var(--text-dark); line-height: 2; }
+
+    .pillars { display: flex; flex-direction: column; max-width: 520px; margin: 0 auto; padding: 0 24px 80px; }
+    .pillar { display: flex; align-items: flex-start; gap: 20px; padding: 28px 0; border-bottom: 1px solid var(--cream-border); opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .pillar:last-child { border-bottom: none; }
+    .pillar.visible { opacity: 1; transform: translateY(0); }
+    .pillar-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; width: 28px; text-align: center; }
+    .pillar-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: 20px; color: var(--text-dark); line-height: 1.5; }
+    .pillar-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; font-weight: 300; }
+
+    .nots { background: var(--cream-dark); padding: 64px 24px; text-align: center; }
+    .nots-inner { max-width: 520px; margin: 0 auto; }
+    .nots-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; }
+    .nots-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
+    .not-item { font-family: 'EB Garamond', serif; font-style: italic; font-size: 17px; color: var(--text-mid); display: flex; align-items: center; gap: 10px; }
+    .not-item::before { content: '—'; color: var(--amber); font-style: normal; flex-shrink: 0; }
+
+    .archive-section { text-align: center; padding: 80px 24px; max-width: 600px; margin: 0 auto; }
+    .archive-quote { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(18px,3vw,24px); color: var(--text-dark); line-height: 1.8; margin-bottom: 24px; }
+    .archive-sub { font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.8; }
+
+    .cta-bottom { text-align: center; padding: 80px 24px 60px; border-top: 1px solid var(--cream-border); }
+    .cta-orb-small { width: 48px; height: 48px; border-radius: 50%; background: radial-gradient(circle at 38% 38%, #E8C99A 0%, #C4956A 40%, #7B6BA8 100%); margin: 0 auto 32px; animation: breathe 4s ease-in-out infinite; box-shadow: 0 0 20px rgba(196,149,106,0.3); }
+    .cta-headline { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(24px,4vw,36px); color: var(--text-dark); margin-bottom: 16px; }
+    .cta-sub { font-family: 'EB Garamond', serif; font-style: italic; font-size: 16px; color: var(--text-muted); margin-bottom: 40px; }
+
+    footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--cream-border); }
+    .footer-logo { font-size: 11px; letter-spacing: 4px; color: var(--text-faint); text-transform: uppercase; margin-bottom: 20px; }
+    .footer-links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-dark); }
+    .footer-copy { font-size: 12px; color: var(--text-faint); font-weight: 300; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 480px) { .nots-grid { grid-template-columns: 1fr; } .download-row { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <p class="hero-logo">Qastar</p>
+    <div class="orb-wrap">
+      <div class="orb-ring"></div>
+      <div class="orb-ring"></div>
+      <div class="orb"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+    </div>
+    <h1 class="hero-headline">Your life, in moments.<br>Shared only with who matters.</h1>
+    <p class="hero-sub">Capture one moment each day. Build your private archive. Share with a small circle of people you actually know.</p>
+    <div class="download-row">
+      <a href="#" class="btn-store apple">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="btn-store-text"><span class="btn-store-label">Download on the</span><span class="btn-store-name">App Store</span></div>
+      </a>
+      <a href="#" class="btn-store android">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M3.18 23.76c.2.11.43.14.66.08l.08-.05 9.12-5.27-1.97-1.97-7.89 7.21zm15.64-9.06L16.7 13.3l2.1-1.21c.28-.16.46-.46.46-.79 0-.33-.18-.63-.46-.79L5.29 3.22c-.22-.13-.49-.14-.72-.04l8.64 8.64-4.83 2.79 2.14 2.14 8.3-1.27c.4-.06.72-.35.82-.73.1-.38-.02-.78-.32-1.05z"/></svg>
+        <div class="btn-store-text"><span class="btn-store-label">Get it on</span><span class="btn-store-name">Google Play</span></div>
+      </a>
+    </div>
+    <p class="hero-note">No ads. No algorithm. No selling your data. Ever.</p>
+  </div>
+
+  <div style="padding: 16px 24px 0;"><div class="ornament">✦ · ✦</div></div>
+
+  <div class="manifesto fade-in">
+    <div class="manifesto-lines">
+      <span>Your journal is yours.</span>
+      <span>Your moments are yours.</span>
+      <span>We built Qastar so that not even</span>
+      <span>we can read them.</span>
+    </div>
+  </div>
+
+  <div style="padding: 0 24px;"><div class="ornament">✦ · ✦</div></div>
+
+  <div class="pillars" style="padding-top: 64px;">
+    <div class="pillar">
+      <div class="pillar-icon">📖</div>
+      <div><div class="pillar-text">Capture a moment each day</div><div class="pillar-sub">A photo, a thought, or both. Takes two minutes.</div></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">👥</div>
+      <div><div class="pillar-text">Share with who matters</div><div class="pillar-sub">Up to 15 people. People you actually know.</div></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">✦</div>
+      <div><div class="pillar-text">Your archive grows quietly</div><div class="pillar-sub">A year from now, Qastar will show you today.</div></div>
+    </div>
+  </div>
+
+  <div class="nots">
+    <div class="nots-inner">
+      <p class="nots-label">What Qastar doesn't do</p>
+      <div class="nots-grid">
+        <div class="not-item">No public feed</div>
+        <div class="not-item">No ads, ever</div>
+        <div class="not-item">No likes from strangers</div>
+        <div class="not-item">No selling your data</div>
+        <div class="not-item">No algorithm</div>
+        <div class="not-item">No reading your entries</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="archive-section fade-in">
+    <p class="archive-quote">"Qastar is for the people who want<br>to remember — not perform."</p>
+    <p class="archive-sub">Every moment you capture becomes part of a private archive.<br>Ten years from now, it will still be there.</p>
+  </div>
+
+  <div style="padding: 0 24px 80px;"><div class="ornament">✦ · ✦</div></div>
+
+  <div class="cta-bottom fade-in">
+    <div class="cta-orb-small"></div>
+    <h2 class="cta-headline">Start your archive today.</h2>
+    <p class="cta-sub">One moment. That's all.</p>
+    <div class="download-row">
+      <a href="#" class="btn-store apple">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="btn-store-text"><span class="btn-store-label">Download on the</span><span class="btn-store-name">App Store</span></div>
+      </a>
+      <a href="#" class="btn-store android">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3.18 23.76c.2.11.43.14.66.08l.08-.05 9.12-5.27-1.97-1.97-7.89 7.21zm15.64-9.06L16.7 13.3l2.1-1.21c.28-.16.46-.46.46-.79 0-.33-.18-.63-.46-.79L5.29 3.22c-.22-.13-.49-.14-.72-.04l8.64 8.64-4.83 2.79 2.14 2.14 8.3-1.27c.4-.06.72-.35.82-.73.1-.38-.02-.78-.32-1.05z"/></svg>
+        <div class="btn-store-text"><span class="btn-store-label">Get it on</span><span class="btn-store-name">Google Play</span></div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p class="footer-logo">Qastar</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="mailto:hello@qastar.app">hello@qastar.app</a>
+      <a href="https://instagram.com/qastar" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/company/qastar" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-copy">© 2026 Qastar · Built with care</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in, .pillar').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
