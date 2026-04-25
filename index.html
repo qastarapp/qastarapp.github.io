@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qastar — Social media, finally intimate</title>
+  <link rel="icon" type="image/png" href="icon-transparent.png" />
   <meta name="description" content="Social media promised connection. It delivered performance. Qastar is what it was always supposed to be." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,7 +40,9 @@
     @keyframes ringPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
     @keyframes sparkleFloat { 0%,100% { opacity: 0; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-4px); } }
 
-    .hero-logo { font-weight: 300; font-size: 13px; letter-spacing: 6px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 32px; }
+    .hero-logo { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 32px; }
+    .hero-logo img { width: 48px; height: 48px; object-fit: contain; }
+    .hero-logo-word { font-weight: 300; font-size: 13px; letter-spacing: 6px; color: var(--text-muted); text-transform: uppercase; }
 
     .hero-headline { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(36px,6vw,68px); color: var(--text-dark); line-height: 1.2; max-width: 760px; margin: 0 auto 12px; }
 
@@ -102,7 +105,9 @@
 
     /* FOOTER */
     footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--cream-border); }
-    .footer-logo { font-size: 11px; letter-spacing: 4px; color: var(--text-faint); text-transform: uppercase; margin-bottom: 20px; }
+    .footer-logo { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .footer-logo img { width: 28px; height: 28px; object-fit: contain; opacity: 0.5; }
+    .footer-logo-word { font-size: 11px; letter-spacing: 4px; color: var(--text-faint); text-transform: uppercase; }
     .footer-links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
     .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 300; transition: color 0.2s; }
     .footer-links a:hover { color: var(--text-dark); }
@@ -121,7 +126,10 @@
 
   <!-- HERO -->
   <div class="hero">
-    <p class="hero-logo">Qastar</p>
+    <div class="hero-logo">
+      <img src="icon-transparent.png" alt="Qastar" />
+      <span class="hero-logo-word">Qastar</span>
+    </div>
 
     <div class="orb-wrap">
       <div class="orb-ring"></div>
@@ -137,7 +145,7 @@
       Social media promised connection.<br>It delivered performance.
     </h1>
 
-    <p class="hero-subheadline">Qastar is what it was always supposed to be.</p>
+    <p class="hero-subheadline">Social Media</p>
 
     <p class="hero-sub">
       A small circle. Real moments. No audience watching your every move.
@@ -274,7 +282,10 @@
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-logo">Qastar</p>
+    <div class="footer-logo">
+      <img src="icon-transparent.png" alt="Qastar" />
+      <span class="footer-logo-word">Qastar</span>
+    </div>
     <div class="footer-links">
       <a href="/privacy.html">Privacy Policy</a>
       <a href="mailto:hello@qastar.app">hello@qastar.app</a>
