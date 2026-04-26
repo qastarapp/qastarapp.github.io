@@ -4,122 +4,269 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Qastar</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="icon-transparent.png" />
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--cream:#FDF8F2;--cream-dark:#F5EDE0;--cream-border:#E8DDD0;--purple:#7B6BA8;--amber:#C4956A;--text-dark:#3D2010;--text-mid:#6B4A2A;--text-muted:#B09070;--text-faint:#D4C4B0}
-    body{background:var(--cream);color:var(--text-dark);font-family:'DM Sans',sans-serif;font-weight:300}
-    nav{padding:24px 32px;border-bottom:1px solid var(--cream-border);display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{font-size:11px;letter-spacing:4px;color:var(--text-muted);text-transform:uppercase;text-decoration:none}
-    .nav-back{font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:var(--text-muted);text-decoration:none}
-    .nav-back:hover{color:var(--text-dark)}
-    .privacy-hero{padding:64px 24px 48px;text-align:center;max-width:680px;margin:0 auto}
-    .privacy-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px}
-    .privacy-title{font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(28px,5vw,42px);color:var(--text-dark);margin-bottom:20px;line-height:1.3}
-    .privacy-promise{font-family:'EB Garamond',serif;font-style:italic;font-size:18px;color:var(--text-muted);line-height:1.8;max-width:520px;margin:0 auto}
-    .privacy-content{max-width:680px;margin:0 auto;padding:48px 24px 80px}
-    .promise-box{background:var(--cream-dark);border:1px solid var(--cream-border);border-radius:16px;padding:32px;margin:0 0 48px;text-align:center}
-    .promise-box p{font-family:'EB Garamond',serif;font-style:italic;font-size:18px;color:var(--text-dark);line-height:2;margin:0}
-    h2{font-family:'EB Garamond',serif;font-style:italic;font-size:22px;color:var(--text-dark);margin:48px 0 14px;font-weight:400;padding-bottom:8px;border-bottom:1px solid var(--cream-border)}
-    h3{font-family:'EB Garamond',serif;font-style:italic;font-size:17px;color:var(--text-mid);margin:28px 0 8px;font-weight:400}
-    p{font-size:14px;color:var(--text-mid);line-height:1.9;margin-bottom:14px;font-weight:300}
-    ul{list-style:none;margin:8px 0 20px}
-    ul li{font-size:14px;color:var(--text-mid);line-height:1.9;padding-left:20px;position:relative;margin-bottom:6px;font-weight:300}
-    ul li::before{content:'·';position:absolute;left:6px;color:var(--amber)}
-    ul li strong{font-weight:500;color:var(--text-dark)}
-    a{color:var(--purple);text-decoration:none}
-    a:hover{text-decoration:underline}
-    table{width:100%;border-collapse:collapse;margin:16px 0 24px}
-    th{font-size:11px;font-weight:500;color:var(--text-dark);text-align:left;padding:10px 14px;border-bottom:1px solid var(--cream-border);letter-spacing:0.5px;background:var(--cream-dark)}
-    td{font-size:13px;color:var(--text-mid);padding:12px 14px;border-bottom:1px solid rgba(232,221,208,0.5);vertical-align:top;font-weight:300;line-height:1.6}
-    footer{text-align:center;padding:40px 24px;border-top:1px solid var(--cream-border)}
-    .footer-links{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
-    .footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:300}
-    .footer-links a:hover{color:var(--text-dark)}
-    .footer-copy{font-size:12px;color:var(--text-faint)}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #18130F;
+      --card:   #211A15;
+      --border: #2E2520;
+      --amber:  #D4A85A;
+      --purple: #9B8EC4;
+      --text:   #EDE5D8;
+      --muted:  #7A6E62;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, 'Times New Roman', serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.85;
+      padding: 0 24px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.5;
+    }
+
+    .wrap {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 80px 0 100px;
+    }
+
+    /* BACK LINK */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-style: italic;
+      margin-bottom: 52px;
+      transition: color 0.2s;
+    }
+    .back:hover { color: var(--text); }
+
+    /* HEADER */
+    .page-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .page-logo img { width: 32px; height: 32px; object-fit: contain; opacity: 0.7; }
+    .page-logo-word { font-size: 11px; letter-spacing: 5px; color: var(--muted); text-transform: uppercase; }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .last-updated {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 52px;
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 44px 0;
+    }
+
+    /* SECTIONS */
+    h2 {
+      font-size: 19px;
+      font-style: italic;
+      color: var(--amber);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 18px;
+      line-height: 1.9;
+    }
+
+    p strong {
+      color: var(--text);
+      font-weight: normal;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0 0 18px;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--border);
+      font-size: 9px;
+      top: 7px;
+    }
+
+    a {
+      color: var(--amber);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212,168,90,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--amber); }
+
+    /* HIGHLIGHT CARD */
+    .highlight {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin: 40px 0;
+    }
+    .highlight p {
+      margin-bottom: 0;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    .page-footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .page-footer-copy { font-size: 12px; color: var(--muted); font-style: italic; }
+    .page-footer a { font-size: 13px; color: var(--muted); border-bottom: none; }
+    .page-footer a:hover { color: var(--text); }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="/" class="nav-logo">Qastar</a>
-    <a href="/" class="nav-back">← Back</a>
-  </nav>
-  <div class="privacy-hero">
-    <p class="privacy-label">Privacy Policy</p>
-    <h1 class="privacy-title">Your words belong to you.</h1>
-    <p class="privacy-promise">We built Qastar so that not even we can read your journal. What you write here belongs only to you — and who you choose.</p>
+<div class="wrap">
+
+  <a href="/" class="back">← Back to Qastar</a>
+
+  <div class="page-logo">
+    <img src="icon-transparent.png" alt="Qastar" />
+    <span class="page-logo-word">Qastar</span>
   </div>
-  <div class="privacy-content">
-    <div class="promise-box">
-      <p>Your journal is yours.<br>Your moments are yours.<br>We built Qastar so that not even we can read them.<br>What you write here belongs only to you — and who you choose.</p>
-    </div>
-    <h2>Who we are</h2>
-    <p>Qastar is a private journaling app that lets you capture daily moments and share them exclusively with a small circle of people you choose. We are not a social network. There is no public feed, no advertising, and no algorithmic recommendations.</p>
-    <h2>What we collect</h2>
-    <h3>Information you provide</h3>
-    <ul>
-      <li><strong>Account information</strong> — your name and either your email address, phone number, or Google/Apple account identifier, used solely to authenticate you.</li>
-      <li><strong>Profile photo</strong> — if you choose to add one.</li>
-      <li><strong>Journal entries</strong> — text and photos you write or upload within the app.</li>
-      <li><strong>Circle connections</strong> — the list of other Qastar users you have added to your circle.</li>
-      <li><strong>Username</strong> — the @handle you choose during setup.</li>
-    </ul>
-    <h3>Information collected automatically</h3>
-    <ul>
-      <li><strong>Device and usage data</strong> — collected by Firebase Analytics (Google), including app opens, session length, and crash reports. Aggregated and anonymous.</li>
-      <li><strong>Crash reports</strong> — collected by Firebase Crashlytics. Reports contain device type, OS version, and a stack trace. They do not contain the content of your journal entries.</li>
-    </ul>
-    <h2>What we do NOT collect</h2>
-    <ul>
-      <li>We do not read your journal entries.</li>
-      <li>We do not sell your data to anyone, ever.</li>
-      <li>We do not serve advertising.</li>
-      <li>We do not share your data with third parties except as described below.</li>
-    </ul>
-    <h2>How your data is used</h2>
-    <table>
-      <thead><tr><th>Data</th><th>Purpose</th></tr></thead>
-      <tbody>
-        <tr><td>Name, email/phone</td><td>Account authentication and display within the app</td></tr>
-        <tr><td>Journal entries and photos</td><td>Stored securely; shared only with circle members you explicitly choose</td></tr>
-        <tr><td>Circle connections</td><td>Determining who can see which moments</td></tr>
-        <tr><td>Analytics and crash data</td><td>Improving app stability and understanding aggregate usage</td></tr>
-      </tbody>
-    </table>
-    <h2>Who can see your moments</h2>
-    <ul>
-      <li><strong>Private moments</strong> — only you.</li>
-      <li><strong>Circle moments</strong> — you and the specific people you have added to your circle.</li>
-      <li><strong>Public moments</strong> — any signed-in Qastar user (you choose this setting per entry).</li>
-    </ul>
-    <p>We do not access or read the content of your moments.</p>
-    <h2>Third-party services</h2>
-    <p>Qastar is built on Google Firebase. Your data is stored in Firebase Firestore (database) and Firebase Storage (photos).</p>
-    <ul>
-      <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
-      <li><a href="https://firebase.google.com/terms/data-processing-terms" target="_blank">Firebase Data Processing Terms</a></li>
-    </ul>
-    <p>We do not integrate any advertising SDKs, social media trackers, or other third-party analytics beyond Firebase.</p>
-    <h2>Data retention and deletion</h2>
-    <p>Your data is retained for as long as your account is active. To delete your account and all associated data, contact us at <a href="mailto:hello@qastar.app">hello@qastar.app</a> and we will process the deletion within 30 days.</p>
-    <h2>Children</h2>
-    <p>Qastar is not directed at children under 13. We do not knowingly collect personal information from anyone under 13.</p>
-    <h2>Security</h2>
-    <p>All data is transmitted over HTTPS and stored in Firebase with access controls enforced server-side. Only you (and your chosen circle members, for shared moments) can access your data.</p>
-    <h2>Changes to this policy</h2>
-    <p>If we make material changes to this policy, we will notify you within the app before the changes take effect.</p>
-    <h2>Contact</h2>
-    <p>Questions or data deletion requests: <a href="mailto:hello@qastar.app">hello@qastar.app</a></p>
+
+  <h1>Privacy Policy</h1>
+  <p class="last-updated">Last updated: April 2026</p>
+
+  <div class="highlight">
+    <p>We built Qastar so your life stays yours. We don't sell your data, we don't read your journal, and we never will. This page explains exactly what we collect, why, and how.</p>
   </div>
-  <footer>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="mailto:hello@qastar.app">hello@qastar.app</a>
-      <a href="https://instagram.com/qastar" target="_blank">Instagram</a>
-    </div>
-    <p class="footer-copy">© 2026 Qastar · Built with care</p>
-  </footer>
+
+  <hr />
+
+  <h2>What Qastar is</h2>
+  <p>Qastar is a private life-capture app for iOS and Android. You capture moments each day, share them with a small circle you choose, and build a personal archive over time. There is no public feed, no algorithmic recommendations, and no advertising — ever.</p>
+
+  <hr />
+
+  <h2>What we collect</h2>
+  <p>We collect only what is necessary to make the app work.</p>
+  <ul>
+    <li><strong>Account information:</strong> your name and email address, used to create and identify your account.</li>
+    <li><strong>Moments and content:</strong> the photos, text, and mood data you choose to post. These are stored securely on Firebase and are visible only to you and the circle members you explicitly share them with.</li>
+    <li><strong>Letters:</strong> private messages you compose and send. These are visible only to the sender and recipient.</li>
+    <li><strong>Circle data:</strong> who you have added to your circle and who has added you. This is used only to determine what content is shared with whom.</li>
+    <li><strong>Usage data:</strong> basic app usage signals such as streak counts and moment timestamps, stored privately per account.</li>
+    <li><strong>Device tokens:</strong> used solely to deliver push notifications for new moments and letters in your circle.</li>
+  </ul>
+
+  <hr />
+
+  <h2>What we do not collect</h2>
+  <ul>
+    <li>We do not collect advertising identifiers</li>
+    <li>We do not build behavioural profiles</li>
+    <li>We do not track your location unless you explicitly attach it to a moment</li>
+    <li>We do not share any data with third-party advertisers</li>
+    <li>We do not sell your data, ever, to anyone</li>
+  </ul>
+
+  <hr />
+
+  <h2>Who can see your content</h2>
+  <p><strong>Private moments</strong> are visible only to you.</p>
+  <p><strong>Circle moments</strong> are visible only to the members of your circle — people you have explicitly chosen and invited.</p>
+  <p><strong>Letters</strong> are visible only to the person you addressed them to.</p>
+  <p>Qastar staff cannot read your moments or letters. We do not access personal content unless legally compelled to do so, and we will notify you if that ever occurs unless prohibited by law.</p>
+
+  <hr />
+
+  <h2>Firebase and infrastructure</h2>
+  <p>Qastar uses <strong>Google Firebase</strong> for authentication, data storage, and push notifications. Firebase stores data on Google's infrastructure. You can read Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+  <p>We do not use any other third-party analytics or tracking services in the app.</p>
+
+  <hr />
+
+  <h2>Data retention</h2>
+  <p>Your content remains in Qastar for as long as your account is active. If you delete a moment, it is removed from our servers. If you delete your account, all associated content — moments, letters, and account data — is permanently deleted within 30 days.</p>
+
+  <hr />
+
+  <h2>Your rights</h2>
+  <p>You have the right to access, correct, or delete any data we hold about you. You can delete your account at any time from within the app. For any questions or requests, contact us at <a href="mailto:hello@qastar.app">hello@qastar.app</a>.</p>
+
+  <hr />
+
+  <h2>Children</h2>
+  <p>Qastar is not intended for users under the age of 13. We do not knowingly collect data from children. If you believe a child has created an account, please contact us at <a href="mailto:hello@qastar.app">hello@qastar.app</a>.</p>
+
+  <hr />
+
+  <h2>Changes to this policy</h2>
+  <p>If we make material changes to this policy, we will notify you through the app. Continued use of Qastar after changes are posted constitutes acceptance of the updated policy.</p>
+
+  <hr />
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or your data: <a href="mailto:hello@qastar.app">hello@qastar.app</a></p>
+
+  <div class="page-footer">
+    <span class="page-footer-copy">✦ &nbsp; Qastar &middot; Social media, finally intimate</span>
+    <a href="/">Back to home</a>
+  </div>
+
+</div>
 </body>
 </html>
